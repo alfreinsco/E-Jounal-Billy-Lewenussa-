@@ -1,0 +1,388 @@
+:root {
+  --sidebar-width: 260px;
+  --sidebar-bg: #1e293b;
+  --sidebar-hover: #334155;
+  --sidebar-active: #3b82f6;
+  --content-bg: #f1f5f9;
+}
+
+* { box-sizing: border-box; }
+
+body.admin-body {
+  margin: 0;
+  background: var(--content-bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: var(--sidebar-width);
+  background: var(--sidebar-bg);
+  color: #e2e8f0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.sidebar-brand {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #334155;
+}
+
+.sidebar-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.sidebar-brand-link:hover {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.95;
+}
+
+.sidebar-brand-text {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.sidebar-brand-text small {
+  font-weight: 400;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-top: 0.15rem;
+}
+
+.app-logo {
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.sidebar-logo {
+  width: 48px;
+  height: 48px;
+}
+
+.topbar-logo {
+  width: 36px;
+  height: 36px;
+}
+
+.login-logo {
+  width: 96px;
+  height: 96px;
+  display: block;
+  margin: 0 auto;
+}
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.topbar-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sidebar-user {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #334155;
+  font-size: 0.875rem;
+}
+
+.sidebar-user strong { color: #fff; display: block; }
+.sidebar-user span { color: #94a3b8; font-size: 0.75rem; }
+
+.sidebar-nav { padding: 1rem 0; list-style: none; margin: 0; }
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.sidebar-nav a:hover {
+  background: var(--sidebar-hover);
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar-nav a.active {
+  background: var(--sidebar-active);
+  color: #fff;
+}
+
+.sidebar-nav .nav-divider {
+  height: 1px;
+  background: #334155;
+  margin: 0.5rem 1.5rem;
+}
+
+.admin-content {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-topbar {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-topbar h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.admin-main { padding: 1.5rem; }
+
+.stat-card {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--sidebar-active);
+}
+
+.stat-card h3 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: #0f172a;
+}
+
+.stat-card p {
+  margin: 0.25rem 0 0;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 0.25rem;
+  margin-top: 0;
+  color: #0f172a;
+  font-size: 1.35rem;
+}
+
+.login-card .subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-panel {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  padding: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+  }
+  .admin-content { margin-left: 0; }
+}
+
+/* Halaman publik (pencarian) */
+.publik-body {
+  margin: 0;
+  background: var(--content-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.publik-header {
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.publik-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.publik-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #0f172a;
+}
+
+.publik-brand:hover {
+  text-decoration: none;
+  color: #0f172a;
+}
+
+.publik-brand strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.publik-brand small {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 400;
+}
+
+.publik-logo {
+  width: 52px;
+  height: 52px;
+}
+
+.publik-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publik-nav a {
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.375rem;
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.publik-nav a:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.publik-nav a.active {
+  background: var(--sidebar-active);
+  color: #fff;
+}
+
+.publik-main {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.publik-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.publik-hero h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.hasil-info {
+  margin-bottom: 1rem;
+  color: #334155;
+}
+
+.pencarian-form .gap-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.publik-footer {
+  background: #fff;
+  border-top: 1px solid #e2e8f0;
+  padding: 1rem 0;
+  color: #64748b;
+}
+
+.paginasi-wrap {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+}
+
+.paginasi-info {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.pagination .page-link {
+  color: #334155;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--sidebar-active);
+  border-color: var(--sidebar-active);
+}
+
+/* DataTables di panel admin */
+.dataTables_wrapper .dataTables_filter label,
+.dataTables_wrapper .dataTables_length label {
+  font-weight: 500;
+  color: #475569;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+  margin-left: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.375rem;
+  padding: 0.35rem 0.65rem;
+}
+
+.dataTables_wrapper .dataTables_info {
+  color: #64748b;
+  font-size: 0.875rem;
+  padding-top: 0.75rem;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+  padding-top: 0.75rem;
+}
+
+table.datatable-admin {
+  width: 100% !important;
+}
